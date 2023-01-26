@@ -1,0 +1,182 @@
+/* ELEMENTS */
+
+*{
+    box-sizing: border-box;
+
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat";
+}
+
+footer{
+    height: 120px;
+    background-color: #2C3E50;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CLASSES, IDS */
+
+.nav-container{
+    background-color: #2C3E50;
+    max-height: 100px;
+    width: 100%;
+    padding: 20px; /* espaçamento do projeto */
+
+    /* cabeçalho sempre fixo no topo da página conforme roda p baixo */
+    position: fixed;
+}
+
+.nav-main{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto; /* centralizar um div dentro do outro com a largura maxima especificada */
+    display: flex;
+    flex-direction: column; /* inverte o eixo */
+    align-items: center; /* alinhar quando o eixo é invertido */
+}
+
+.nav-main a { /* textos a da nav-main */
+    color: white;
+    text-transform: uppercase; 
+    text-decoration: none; /* tirar o grifado */
+
+}
+
+.menu-items{
+    display: flex; /* um ao lado do outro e não embaixo */
+    list-style-type: none; /* sem a bolinha do lado */
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    margin: 15px 10px 10px 10px; /* cima, direita, baixo, esquerda (sentido horário) */
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.nav-brand{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.profile-container{
+    background-color: #1ABC9C;
+    /* alinhar itens ao centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: white; /* fonte */
+
+    padding: 160px 0px 60px 0px ; /* margens do projeto 160 pois fixamos o cabeçalho, então ele não conta, somar o tamanho dele na margem superior */
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+}
+
+.profile-title{
+    margin: 35px 0px 0px 0px;
+    font-size: 2rem; /* tamanho relativo a 16 */
+}
+
+.profile-description{
+    margin: 0 0 0 0;
+    font-size: 1rem;
+}
+
+#portfolio { /* id */
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.portfolio-title{
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #2C3E50;
+    margin: 60px 0px 10px 0px; /* descontar a margem da imagem abaixo */
+}
+
+.portfolio-container{
+    /* alinhar itens ao centro */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* quebra de linha */
+}
+
+.portfolio-item {
+    /* tamanho da imagem variando de acordo com o tamanho da página */
+    width: calc(100% - 40px); /* 40px é a largura da borda, 20px de cada lado */
+    max-width: 420px;
+
+    /*height: 200px;*/
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.footer-title{
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 3px;
+}
+
+.footer-items img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    margin: 10px;    
+}
+
+/* DEFININDO COMPORTAMENTO DIFERENCIADO A PARTIR DE UM CERTO TAMANHO DE TELA */
+@media(min-width: 576px){
+
+    html{
+        font-size: 20px; /* APLICA NAQUELES QUE TEM A MEDIDA RELATIVA rem */
+    }
+
+}
+
+@media(min-width: 768px){
+
+    html{
+        font-size: 24px; /* regra de 3 ---    2 rem -> 48px | 1 rem -> x | x=24px */
+    }
+
+    .portfolio-item{
+        width: 280px;
+    }
+
+    /* cabeçalho */
+    .nav-main{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-brand{
+        margin-bottom: 0;
+        font-size: 30px;
+    }
+
+    .nav-container{
+        display: flex;
+    }
+
+    .menu-items{
+        font-size: 18px;
+    }
+
+}
